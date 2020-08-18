@@ -19,13 +19,19 @@ Car::Car(string brand, string model, int year)
     (*this).year = year;
 }
 
+ostream &operator<<(ostream &sout, const Car &car)
+{
+    sout << car.brand << " " << car.model << " " << car.year << "\n";
+    return sout;
+}
+
 int main()
 {
     Car carObj1{"BMW", "X5", 1999};
     Car carObj2("Ford", "Mustang", 1969);
 
-    cout << carObj1.brand << " " << carObj1.model << " " << carObj1.year << "\n";
-    cout << carObj2.brand << " " << carObj2.model << " " << carObj2.year << "\n";
+    cout << carObj1;
+    cout << carObj2;
 
     return 0;
 }
